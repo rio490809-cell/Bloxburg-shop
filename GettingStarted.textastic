@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BLOX SHOP</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    p.description {
+      font-size: 1.1em;
+      margin-bottom: 40px;
+      text-align: center;
+      max-width: 600px;
+      color: #444;
+    }
+
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+
+    .link-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 120px;
+      background-color: #fff;
+      color: #000;
+      font-size: 1.1em;
+      font-weight: bold;
+      border: 2px solid #000;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease-in-out;
+      text-align: center;
+    }
+
+    .link-button:hover {
+      transform: scale(1.05);
+      background-color: #f0f0f0;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .money-display {
+      background-color: white;
+      color: green;
+      font-size: 2.5em;
+      font-weight: bold;
+      padding: 30px 60px;
+      border-radius: 12px;
+      border: 2px solid #ccc;
+      box-shadow: 0 0 20px rgba(0, 128, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>BLOX SHOP</h1>
+  <p class="description">
+    Trusted bloxburg cash shop. How it works? Click the amount you want to buy, then purchase the gamepass. 
+    Check your friend requests for the bot, accept it, and it will join you. Enjoy your Bloxburg cash!
+  </p>
+
+  <div class="button-grid">
+    <a href="https://www.roblox.com/game-pass/1428222528/1000-BLOXBURG-CASH" class="link-button">1,000 Bloxburg Cash</a>
+    <a href="https://www.roblox.com/game-pass/1428462495/10-000-BLOXBURG-CASH" class="link-button">10,000 Bloxburg Cash</a>
+    <a href="https://www.roblox.com/game-pass/1428222530/20-000-BLOXBURG-CASH" class="link-button">20,000 Bloxburg Cash</a>
+    <a href="https://www.roblox.com/game-pass/1427350607/40-000-BLOXBURG-CASH" class="link-button">40,000 Bloxburg Cash</a>
+    <a href="https://www.roblox.com/game-pass/1427040582/60-000-BLOXBURG-CASH" class="link-button">60,000 Bloxburg Cash</a>
+    <a href="https://www.roblox.com/game-pass/1428264499/100-000-BLOXBURG-CASH" class="link-button">100,000 Bloxburg Cash</a>
+    <a href="https://www.roblox.com/game-pass/1428384503/200-000-BLOXBURG-CASH" class="link-button">200,000 Bloxburg Cash</a>
+    <a href="https://www.roblox.com/game-pass/1427888546/500-000-BLOXBURG-CASH" class="link-button">500,000 Bloxburg Cash</a>
+    <a href="https://www.roblox.com/game-pass/1427204621/1-000-000-BLOXBURG-CASH" class="link-button">1,000,000 Bloxburg Cash</a>
+    <a href="https://www.roblox.com/game-pass/1427670584/10-000-000-BLOXBURG-CASH" class="link-button">10,000,000 Bloxburg Cash</a>
+  </div>
+
+  <div class="money-display" id="moneyDisplay">$20,000,000</div>
+
+  <script>
+    let money = 20000000;
+
+    function formatMoney(amount) {
+      return "$" + amount.toLocaleString();
+    }
+
+    document.querySelectorAll('.link-button').forEach(button => {
+      button.addEventListener('click', () => {
+        if (money > 0) {
+          money -= 1000;
+          document.getElementById('moneyDisplay').textContent = formatMoney(money);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
